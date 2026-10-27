@@ -1,3 +1,23 @@
+## [8.2.2] - 23/09/2025
+
+- Merge pull request #239 from MaximeRougieux/master
+- fix: marker layers culling mechanism (by @MaximeRougieux)
+- test: add pixelBounds test for MarkerNode and MarkerClusterNode (by @MaximeRougieux)
+- chore: updates version to 8.2.2 and dependencies (flutter_map, flutter_map_marker_popup)
+
+## [8.1.0] - 31/03/2025
+
+- chore: updates version to 8.1.0 and flutter_map to 8.1.1
+
+## [8.0.0] - 28/02/2025
+
+- Merge pull request #230 from enricostrijks/master
+- Merge pull request #231 from karolgajda-techsquare/patch-1
+- fix(flutter_map): make flutter_map v8 possible (by @enricostrijks)
+- fix(bounds): Small calculation bound issue (by @enricostrijks)
+- Fix typo in `marker_cluster_layer_options.dart` (by @karolgajda-techsquare)
+- chore: removes unnecessary `dart:math` imports
+
 ## [1.4.0] - 19/09/2024
 
 - Merge pull request #220 from lemiha/master

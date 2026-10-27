@@ -12,15 +12,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_map:
-    git:
-      url: https://github.com/ben-milanko/flutter_map.git
-      ref: fix/fling-rebound
-  flutter_map_marker_popup:
-    git:
-      url: https://github.com/enricostrijks/flutter_map_marker_popup.git
-      ref: master
-  latlong2: ^0.9.0
+  flutter_map: ^8.2.2
+  flutter_map_marker_popup: ^8.1.0
+  latlong2: ^0.9.1
 
 dev_dependencies:
   flutter_lints: ^4.0.0

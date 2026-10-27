@@ -22,7 +22,7 @@ class AnimationsOptions {
   final Curve fadeOutCurve;
   final Curve clusterExpandCurve;
   final Curve clusterCollapseCurve;
-  final Curve sipderifyCurve;
+  final Curve spiderifyCurve;
   final Duration zoom;
   final Duration fitBound;
   final Curve fitBoundCurves;
@@ -37,7 +37,7 @@ class AnimationsOptions {
     this.fadeOutCurve = Curves.easeInCubic,
     this.clusterExpandCurve = Curves.easeInCubic,
     this.clusterCollapseCurve = Curves.easeInCubic,
-    this.sipderifyCurve = Curves.fastOutSlowIn,
+    this.spiderifyCurve = Curves.fastOutSlowIn,
     this.centerMarker = const Duration(milliseconds: 500),
     this.spiderfy = const Duration(milliseconds: 500),
     this.fitBoundCurves = Curves.fastOutSlowIn,

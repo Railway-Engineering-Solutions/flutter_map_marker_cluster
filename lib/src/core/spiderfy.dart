@@ -3,13 +3,15 @@ import 'dart:ui';
 
 class Spiderfy {
   static const pi2 = pi * 2;
-  static const spiralFootSeparation = 28; //related to size of spiral (experiment!)
+  static const spiralFootSeparation =
+      28; //related to size of spiral (experiment!)
   static const spiralLengthStart = 11;
   static const spiralLengthFactor = 5;
 
   static const circleStartAngle = 0;
 
-  static List<Offset?> spiral(int distanceMultiplier, int count, Offset center) {
+  static List<Offset?> spiral(
+      int distanceMultiplier, int count, Offset center) {
     num legLength = distanceMultiplier * spiralLengthStart;
     final separation = distanceMultiplier * spiralFootSeparation;
     final lengthFactor = distanceMultiplier * spiralLengthFactor * pi2;
@@ -22,7 +24,8 @@ class Spiderfy {
       // Skip the first position, so that we are already farther from center and we avoid
       // being under the default cluster icon (especially important for Circle Markers).
       if (i < count) {
-        result[i] = Offset(center.dx + legLength * cos(angle), center.dy + legLength * sin(angle));
+        result[i] = Offset(center.dx + legLength * cos(angle),
+            center.dy + legLength * sin(angle));
       }
       angle += separation / legLength + i * 0.0005;
       legLength += lengthFactor / angle;
@@ -36,7 +39,8 @@ class Spiderfy {
     return List<Offset>.generate(count, (index) {
       final angle = circleStartAngle + index * angleStep;
 
-      return Offset(center.dx + radius * cos(angle), center.dy + radius * sin(angle));
+      return Offset(
+          center.dx + radius * cos(angle), center.dy + radius * sin(angle));
     });
   }
 }

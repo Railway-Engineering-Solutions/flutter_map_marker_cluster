@@ -124,18 +124,27 @@ class MarkerClusterNode extends MarkerOrClusterNode {
   }
 
   @override
-  Offset pixelBounds(MapCamera map) {
-    final width = size().width;
-    final height = size().height;
+  Rect pixelBounds(MapCamera map) {
+    final center = map.projectAtZoom(bounds.center);
+    final alignment = this.alignment ?? Alignment.center;
+    final size = this.size();
 
-    final left = 0.5 * width * ((alignment ?? Alignment.center).x + 1);
-    final top = 0.5 * height * ((alignment ?? Alignment.center).y + 1);
-    final right = width - left;
-    final bottom = height - top;
+    // Calculate offset from center based on alignment
+    final offsetX = size.width * alignment.x * 0.5; // -0.5 to 0.5 range
+    final offsetY = size.height * alignment.y * 0.5; // -0.5 to 0.5 range
 
-    final ne = map.projectAtZoom(bounds.northEast) + Offset(right, bottom);
-    final sw = map.projectAtZoom(bounds.southWest) + Offset(left, top);
+    // Calculate top-left corner
+    final topLeft = Offset(
+      center.dx + offsetX,
+      center.dy + offsetY,
+    );
 
-    return Offset(ne.dx - sw.dx, ne.dy - sw.dy);
+    // Calculate bottom-right corner
+    final bottomRight = Offset(
+      topLeft.dx + size.width,
+      topLeft.dy + size.height,
+    );
+
+    return Rect.fromPoints(topLeft, bottomRight);
   }
 }

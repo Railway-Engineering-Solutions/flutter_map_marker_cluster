@@ -11,5 +11,7 @@ abstract class MarkerOrClusterNode {
 
   MarkerOrClusterNode({required this.parent});
 
-  Offset pixelBounds(MapCamera map);
+  /// Returns the screen bounds as a Rect for proper culling calculations.
+  /// This is the actual position and size of the marker/cluster on screen.
+  Rect pixelBounds(MapCamera map);
 }
